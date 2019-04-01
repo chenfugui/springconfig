@@ -61,7 +61,7 @@ mybatis:
 
     
 spring:
-  profiles: dev
+  profiles: test
   application: 
     name: servicedept #应用服务名称
   datasource:
