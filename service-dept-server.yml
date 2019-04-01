@@ -81,7 +81,7 @@ eureka:
     service-url: #eureka 注册服务地址
       defaultZone: http://com.cfg.eureka7002:7002/eureka
   instance:
-     instance-id: microservice-dept-8081 #服务名称(默认applicateName)
+     instance-id: microservice-dept-8082 #服务名称(默认applicateName)
      prefer-ip-address: true #访问路径显示ip
 
  # 服务的info信息 
