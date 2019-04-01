@@ -1,0 +1,27 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8201
+spring:
+  profile: dev
+  application:
+    name: servicecloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://com.cfg.eureka7001:7001/eureka/,http://com.cfg.eureka7002:7002/eureka/ #设置与Eureka Server交互的地址查询服务和注册服务(集群配置,配置其他eureka地址)
+---
+server:
+  port: 8202
+spring:
+  profiles: test
+  application:
+    name: servicecloud-config-client
+eureka:
+  client:
+    service-url:
+      defaultZone: http://com.cfg.eureka7001:7001/eureka/,http://com.cfg.eureka7002:7002/eureka/ #设置与Eureka Server交互的地址查询服务和注册服务(集群配置,配置其他eureka地址)
+---
