@@ -1,0 +1,92 @@
+spring:
+  profiles:
+    active:
+    - dev
+---
+server:
+  port: 8081
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybatis配置文件
+  type-aliases-package: com.cfg.entity          #所有entity别名类所在包
+  table:
+    auto: update
+  model:
+    pack: com.cfg.entity
+  mapper-locations: classpath:mybatis/mapper/*.xml         # mapper映射文件位置
+
+    
+spring:
+  profiles: dev
+  application: 
+    name: servicedept #应用服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据库操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver   # mysql驱动类
+    url: jdbc:mysql://localhost:3306/boot_blog?serverTimezone=GMT%2B8&characterEncoding=utf-8    # 数据库连接
+    username: test123
+    password: test123
+    dbcp2:
+      min-ide: 5                              #数据库最小连接维持数
+      initial-size: 5                         #初始化连接数
+      max-total: 5                            #最大连接数
+      max-wait-millis: 200                    #等待连接获取的最大超时时间
+      
+eureka:
+  client:
+    service-url: #eureka 注册服务地址
+      defaultZone: http://com.cfg.eureka7001:7001/eureka
+  instance:
+     instance-id: microservice-dept-8081 #服务名称(默认applicateName)
+     prefer-ip-address: true #访问路径显示ip
+
+ # 服务的info信息 
+info:
+  app.name: cfg-service
+  company.name: www.baidu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+---  
+server:
+  port: 8082
+
+mybatis:
+  config-location: classpath:mybatis/mybatis.cfg.xml #mybatis配置文件
+  type-aliases-package: com.cfg.entity          #所有entity别名类所在包
+  table:
+    auto: update
+  model:
+    pack: com.cfg.entity
+  mapper-locations: classpath:mybatis/mapper/*.xml         # mapper映射文件位置
+
+    
+spring:
+  profiles: dev
+  application: 
+    name: servicedept #应用服务名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource #当前数据库操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver   # mysql驱动类
+    url: jdbc:mysql://localhost:3306/boot_blog?serverTimezone=GMT%2B8&characterEncoding=utf-8    # 数据库连接
+    username: test123
+    password: test123
+    dbcp2:
+      min-ide: 5                              #数据库最小连接维持数
+      initial-size: 5                         #初始化连接数
+      max-total: 5                            #最大连接数
+      max-wait-millis: 200                    #等待连接获取的最大超时时间
+      
+eureka:
+  client:
+    service-url: #eureka 注册服务地址
+      defaultZone: http://com.cfg.eureka7002:7002/eureka
+  instance:
+     instance-id: microservice-dept-8081 #服务名称(默认applicateName)
+     prefer-ip-address: true #访问路径显示ip
+
+ # 服务的info信息 
+info:
+  app.name: cfg-service
+  company.name: www.baidu.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
