@@ -1,0 +1,35 @@
+server:
+  port: 8535
+  servlet:
+    context-path: /ssdc
+
+spring:
+  rabbitmq:
+    addresses: 10.10.66.53
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      trace:
+        enabled: true #开启消息跟踪
+  application:
+    name: ssdc
+    # 引擎模板配置
+  thymeleaf:
+    cache: false # 关闭缓存
+    mode: HTML5 # 去除htm5严格校验
+    prefix: classpath:/templates/ # 指定 thymeleaf 模板路径
+    encoding: UTF-8 # 指定字符集编码
+  mvc:
+    static-path-pattern: /static/** # js ,css 等静态文件路径
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://10.10.66.53:8761/eureka/
+  instance:
+    ip-address: 10.6.255.142
+
+test:
+  url: test.url.1234
