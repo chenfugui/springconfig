@@ -1,5 +1,5 @@
 server:
-  port: 8533
+  port: 8531
   servlet:
     context-path: /ssfda
 
@@ -11,6 +11,9 @@ spring:
     password: guest
   cloud:
     bus:
+      ack:
+        enabled: true
+        destination-service: ssfda
       trace:
         enabled: true #开启消息跟踪
   application:
@@ -30,12 +33,9 @@ eureka:
       defaultZone: http://10.10.66.53:8761/eureka/
   instance:
     ip-address: 10.6.255.142
-    
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-test:
-  url: test.url.1234
