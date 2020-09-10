@@ -32,4 +32,4 @@ eureka:
     ip-address: 10.6.255.142
 
 test:
-  url: test.url.4321
+  url: test.url.666666
