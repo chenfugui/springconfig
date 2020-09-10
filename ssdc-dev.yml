@@ -38,4 +38,4 @@ management:
         include: "*"
 
 test:
-  url: test.url.11111
+  url: test.url.99999
