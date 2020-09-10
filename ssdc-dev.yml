@@ -1,5 +1,5 @@
 server:
-  port: 8535
+  port: 8534
   servlet:
     context-path: /ssdc
 
@@ -13,6 +13,9 @@ spring:
     bus:
       trace:
         enabled: true #开启消息跟踪
+      ack:
+        enabled: true
+        destination-service: ssdc
   application:
     name: ssdc
     # 引擎模板配置
@@ -30,12 +33,9 @@ eureka:
       defaultZone: http://10.10.66.53:8761/eureka/
   instance:
     ip-address: 10.6.255.142
-    
+
 management:
   endpoints:
     web:
       exposure:
         include: "*"
-
-test:
-  url: test.url.6666
