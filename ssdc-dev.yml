@@ -39,3 +39,6 @@ management:
     web:
       exposure:
         include: "*"
+
+test:
+  url: testurl123
