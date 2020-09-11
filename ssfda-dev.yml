@@ -14,7 +14,7 @@ spring:
       bindings:
         myMessage: # 消息topic myMessage
           group: customer # 组名customer
-      # 关闭自动提交
+      # 关闭自动提交, 手动提交
       rabbit:
         bindings:
           myMessage:
