@@ -1,0 +1,39 @@
+server:
+  port: 8532
+  servlet:
+    context-path: /ssfda
+spring:
+  rabbitmq:
+    addresses: localhost #10.10.66.53
+    port: 5672
+    username: guest
+    password: guest
+  cloud:
+    bus:
+      ack:
+        enabled: true
+        destination-service: ssfda
+      trace:
+        enabled: true #开启消息跟踪
+  application:
+    name: ssfda
+    # 引擎模板配置
+  thymeleaf:
+    cache: false # 关闭缓存
+    mode: HTML5 # 去除htm5严格校验
+    prefix: classpath:/templates/ # 指定 thymeleaf 模板路径
+    encoding: UTF-8 # 指定字符集编码
+  mvc:
+    static-path-pattern: /static/** # js ,css 等静态文件路径
+
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8791/eureka/ #http://10.10.66.53:8761/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
