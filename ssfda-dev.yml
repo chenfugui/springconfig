@@ -18,7 +18,7 @@ spring:
       rabbit:
         bindings:
           myMessage:
-            customer:
+            consumer:
               acknowledge-mode: manual
     bus:
       ack:
