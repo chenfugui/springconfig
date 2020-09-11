@@ -14,6 +14,12 @@ spring:
       bindings:
         myMessage: # 消息topic myMessage
           group: customer # 组名customer
+      # 关闭自动提交
+      rabbit:
+        bindings:
+          myMessage:
+            customer:
+              acknowledge-mode: manual
     bus:
       ack:
         enabled: true
