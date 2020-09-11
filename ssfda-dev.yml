@@ -10,6 +10,10 @@ spring:
     username: guest
     password: guest
   cloud:
+    stream:  # 解决重复消费，启动多个实例一条消息每个实例都接收处理问题；通过添加组（-个组对应一个队列；不指定每个消费者一个队列；一个组中的服务只能有一个消费消息）
+      bindings:
+        myMessage: # 消息topic myMessage
+          group: customer # 组名customer
     bus:
       ack:
         enabled: true
